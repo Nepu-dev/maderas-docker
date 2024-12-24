@@ -1,13 +1,8 @@
-version: '3.8'
-
 services:
   frontend:
     image: nepudev/gb-maderas-frontend:latest
     ports:
       - "3000:3000"
-    volumes:
-      - ./frontend_maderas/frontend_maderas:/app
-      - /app/node_modules
     environment:
       - NODE_ENV=production
     depends_on:
@@ -19,8 +14,6 @@ services:
     image: nepudev/gb-maderas-backend:latest
     ports:
       - "8000:8000"
-    volumes:
-      - ./backend_maderas/backend_maderas:/var/www/html
     environment:
       - APP_ENV=production
       - APP_URL=http://138.197.17.116
